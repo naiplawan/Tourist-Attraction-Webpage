@@ -1,0 +1,21 @@
+.homePage-Box{
+    width: 100vw;
+}
+.seperator{
+    height: 2rem;
+}
+.titleBox{
+    font-size: 5rem;
+    color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+}
+.inputBox{
+    
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding-left: 50%;
+    font-size: 2rem;
+    font-family: 'Kanit', sans-serif;
+}
