@@ -5,6 +5,7 @@ export default function App() {
     return (
         <div className={appstyle.App}>
             <HomePage />
+            <h1>App</h1>
         </div>
     );
 }
