@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BoxResults from "../components/BoxResult";
+import BoxResults from "./components/BoxResult";
 import homepageStyles from "../styles/Homepage.module.css";
 
 export default function HomePage() {

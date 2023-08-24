@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "mocha"
   },
   "dependencies": {
     "axios": "^1.4.0",
@@ -17,7 +18,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.15",
+    "chai": "^4.3.8",
     "daisyui": "^3.0.2",
+    "mocha": "^10.2.0",
     "postcss": "^8.4.28",
     "tailwindcss": "^3.3.3"
   }
