@@ -6,21 +6,30 @@ function BoxResults({ value }) {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    handleSearch(value);
+    fetchLocations(value);
   }, [value]);
 
-  const getLocationData = async () => {
+  async function fetchLocations(keywords) {
+    const uri = "mongodb+srv://rachapholplo:<password>@cluster0.qm8qssu.mongodb.net/?retryWrites=true&w=majority" 
+    // Replace with your MongoDB Atlas URI
+    const client = new MongoClient(uri);
+
     try {
-      const result = await axios.get(`http://localhost:4001/trips?keywords=${value}`);
-      setLocations(result.data.data);
+      await client.connect();
+
+      const database = client.db("Travel_Mockup");
+      const collection = database.collection("MockUp_Data");
+      const query = { /* ...your query object based on keywords */ };
+      const result = await collection.find(query).toArray();
+
+      setLocations(result);
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally {
+      await client.close();
     }
-  };
+  }
 
-  const handleSearch = (searchValue) => {
-    getLocationData(searchValue);
-  };
 
   return (
     <div className={boxresultstyles.boxResult}>
